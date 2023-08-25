@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire Usager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -153,7 +154,26 @@
             </div>
         </div>
     <?php
-        if ($_SERVER["REQUEST_METHOD"])
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && $nomGood == true && $mdpGood == true && $confirmationGood == true && $emailGood == true && $avatarGood == true && $sexeGood == true && $dateGood == true && $transportGood == true) {
+    ?> 
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src=<?php echo $_POST['avatar']?> alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $_POST["nom"] ?></h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="index.php" class="btn btn-primary" id="retour">Retour au formulaire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php
+        }
+    ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
