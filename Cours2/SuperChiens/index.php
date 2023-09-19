@@ -9,8 +9,8 @@
 <body>
     <?php
         $servername = "localhost";
-        $username = "root";
-        $password = "root";
+        $username = "jay";
+        $password = "gamer0301";
         $db = "joueurs";
         //Create connection
             $conn = new mysqli( $servername, $username, $password, $db );
@@ -20,7 +20,7 @@
         }
         echo "Connected successfully";
 
-        $sql = "SELECT id, nom, numero, age, ppg FROM Joueurs";
+        $sql = "SELECT id, nom, numero, age, ppg FROM joueurs";
         $result = $conn->query($sql);
         if ($result -> num_rows > 0) {
         //output data of each row
